@@ -12,6 +12,7 @@ import '../styles/grid.css';
 class Grid extends React.Component{
 	constructor(props){
 		super(props)
+		this.fruit_timer = 0
 		this.state = {
 			human:{},
 			fruit:{},
@@ -61,6 +62,10 @@ class Grid extends React.Component{
 			this.updateSelectedFruit()
 		})
 	}
+	startFruitTimertoUpdateFruit(){
+		clearInterval(this.fruit_timer)
+		this.fruit_timer = setInterval(this.updateFruitPosition.bind(this), 3000);
+	}
 	updateSelectedFruit(){
 		if (this.state.fruitCollection.length>0){
 			let randomFruit = this.state.fruitCollection[Math.floor(Math.random()*(this.state.fruitCollection.length))]
@@ -68,6 +73,8 @@ class Grid extends React.Component{
 			fruitState["selectedFruit"] = randomFruit
 			this.setState({
 				fruit:fruitState
+			},()=>{
+				this.startFruitTimertoUpdateFruit()
 			})
 		}
 	}
