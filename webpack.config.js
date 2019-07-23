@@ -11,7 +11,7 @@ let config = {
 		path:path.resolve(__dirname,'dist'),
 		filename:"[name].[chunkhash].js",
 		chunkFilename:"[name].[chunkhash].js",
-		publicPath:'/sliding-puzzle-game-using-react-with-redux/'
+		publicPath:'/sliding-puzzle-game-using-react/'
 	},
 	performance: {
 	    maxEntrypointSize: 400000,
@@ -90,7 +90,7 @@ if (process.env.NODE_ENV !== 'production') {
 			path:path.resolve(__dirname,'dist'),
 			filename:"[name].[chunkhash].js",
 			chunkFilename:"[name].[chunkhash].js",
-			publicPath:'/sliding-puzzle-game-using-react-with-redux/'
+			publicPath:'/sliding-puzzle-game-using-react/'
 		},
 		module:{
 			rules:[
